@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zenith Task Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'primary': 'var(--color-primary)',
+              'secondary': 'var(--color-secondary)',
+              'accent': 'var(--color-accent)',
+              'text-primary': 'var(--color-text-primary)',
+              'text-secondary': 'var(--color-text-secondary)',
+              'border-color': 'var(--color-border-color)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* --- THEME COLORS --- */
+      :root { /* Dark theme by default */
+        --color-primary: #1a1d2e;
+        --color-secondary: #252945;
+        --color-text-primary: #e0e0e0;
+        --color-text-secondary: #a0a0a0;
+        --color-border-color: #3a3f61;
+      }
+
+      html.light { /* Light theme */
+        --color-primary: #f8f9fa;
+        --color-secondary: #ffffff;
+        --color-text-primary: #212529;
+        --color-text-secondary: #6c757d;
+        --color-border-color: #dee2e6;
+      }
+      
+      /* --- ACCENT COLORS --- */
+      /* Purple (Default) */
+      :root, .theme-purple { --color-accent: #8a5cf6; }
+      html.light.theme-purple { --color-accent: #7c3aed; }
+
+      /* Blue */
+      .theme-blue { --color-accent: #3b82f6; }
+      html.light.theme-blue { --color-accent: #2563eb; }
+      
+      /* Green */
+      .theme-green { --color-accent: #22c55e; }
+      html.light.theme-green { --color-accent: #16a34a; }
+
+      /* Orange */
+      .theme-orange { --color-accent: #f97316; }
+      html.light.theme-orange { --color-accent: #ea580c; }
+      
+      /* Pink */
+      .theme-pink { --color-accent: #ec4899; }
+      html.light.theme-pink { --color-accent: #db2777; }
+
+      body {
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      @keyframes glow {
+        0%, 100% { 
+          box-shadow: 0 0 4px var(--color-accent), 0 0 8px var(--color-accent);
+          border-color: var(--color-accent);
+        }
+        50% { 
+          box-shadow: 0 0 8px var(--color-accent), 0 0 16px var(--color-accent);
+          border-color: var(--color-accent);
+        }
+      }
+      .glow-animation {
+        animation: glow 2.5s ease-in-out infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.15.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-primary text-text-primary">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

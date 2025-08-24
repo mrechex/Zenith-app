@@ -1,0 +1,5 @@
+{
+  "name": "Zenith Task Manager",
+  "description": "A comprehensive productivity app inspired by TickTick, featuring task management, Kanban boards, and planned integrations for calendars, goals, and finance tracking. This is the foundational version focusing on core task and project visualization.",
+  "requestFramePermissions": []
+}
